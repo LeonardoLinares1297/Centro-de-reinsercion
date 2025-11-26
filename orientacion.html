@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientación Familiar | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root { --primary-color: #003366; --accent-color: #d63384; --warm-bg: #fff5f8; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #fff; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+
+        /* Hero Header */
+        .hero-familia {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(214, 51, 132, 0.6)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 130px 0;
+            text-align: center;
+        }
+
+        /* Content Section */
+        .feature-item {
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: var(--warm-bg);
+            margin-bottom: 20px;
+        }
+        .feature-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.1);
+        }
+        .icon-heart { color: var(--accent-color); font-size: 2rem; margin-bottom: 15px; }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item active" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-familia">
+        <div class="container">
+            <h1 class="display-3 mb-3 animate__animated animate__fadeIn">La Familia como Red de Apoyo</h1>
+            <p class="lead w-75 mx-auto">La recuperación no es un camino solitario. Fortalecemos los lazos afectivos para crear un entorno seguro y libre de adicciones.</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="py-5">
+        <div class="container">
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-5 mb-4">
+                    <div class="shadow-lg rounded-circle overflow-hidden mx-auto" style="width: 350px; height: 350px; background: #fff0f5;">
+                        <!-- Modelo 3D: Canoa (Remando juntos) -->
+                        <model-viewer 
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                            alt="Trabajo en equipo familiar" 
+                            auto-rotate 
+                            camera-controls 
+                            style="width: 100%; height: 100%;">
+                        </model-viewer>
+                    </div>
+                    <p class="text-center text-muted mt-3 small">"En esta familia, remamos juntos hacia el bienestar."</p>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold" style="color: var(--primary-color);">¿Por qué involucrar a la familia?</h2>
+                    <p class="text-justify text-muted lead">
+                        Las adicciones impactan a todo el núcleo familiar, generando codependencia, conflictos de comunicación y estrés. 
+                    </p>
+                    <p class="text-justify text-muted">
+                        Nuestro programa de <strong>Orientación Familiar</strong> busca transformar la dinámica del hogar. No buscamos culpables, sino soluciones. Capacitamos a padres, parejas y hermanos para que se conviertan en "co-terapeutas" activos en el proceso de recuperación, aprendiendo a establecer límites sanos y a reconstruir la confianza.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="feature-item h-100">
+                        <i class="fas fa-users icon-heart"></i>
+                        <h4>Terapia Familiar</h4>
+                        <p class="text-muted">Sesiones donde, con la guía de un especialista, la familia puede expresar sus emociones reprimidas, mejorar la comunicación y resolver conflictos añejos que pueden estar detonando el consumo.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-item h-100">
+                        <i class="fas fa-chalkboard-teacher icon-heart"></i>
+                        <h4>Escuela para Padres</h4>
+                        <p class="text-muted">Talleres psicoeducativos donde se abordan temas como: manejo de la autoridad, detección de señales de alarma, adolescencia y comunicación asertiva.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-item h-100">
+                        <i class="fas fa-hand-holding-heart icon-heart"></i>
+                        <h4>Atención a la Codependencia</h4>
+                        <p class="text-muted">Apoyo específico para los familiares que han descuidado su propia vida por intentar "salvar" al usuario. Les ayudamos a recuperar su autonomía y salud emocional.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-item h-100">
+                        <i class="fas fa-shield-virus icon-heart"></i>
+                        <h4>Prevención de Recaídas</h4>
+                        <p class="text-muted">Enseñamos a la familia a identificar situaciones de riesgo y a actuar de manera adecuada si se presenta una crisis, evitando reacciones que empeoren la situación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-5 pt-4 border-top">
+                <h3 class="mb-3 text-dark">¿Sientes que la situación en casa te supera?</h3>
+                <p class="text-muted mb-4">No tienes que cargar con todo tú solo/a. Estamos aquí para escucharte.</p>
+                <a href="contacto.html" class="btn btn-primary rounded-pill px-5 py-2 shadow">
+                    <i class="fas fa-comments me-2"></i> Solicitar Orientación
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Área de Trabajo Social y Atención a Familias.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

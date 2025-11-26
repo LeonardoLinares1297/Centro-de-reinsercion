@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Misión | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; --gold: #c5a059; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f4f4f4; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+
+        /* Hero Header */
+        .mission-header {
+            background: linear-gradient(rgba(0, 30, 60, 0.9), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        /* Cards de Valores */
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .value-card:hover { transform: translateY(-10px); border-bottom-color: var(--gold); }
+        .value-icon { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="mission-header">
+        <div class="container">
+            <h1 class="display-3 mb-4 animate__animated animate__fadeIn">Nuestra Razón de Ser</h1>
+            <p class="lead w-75 mx-auto opacity-75">"Proporcionar servicios de prevención, tratamiento y rehabilitación de adicciones con equidad, calidad y calidez."</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="text-primary mb-4">La Misión CIJ</h2>
+                    <p class="text-justify lead text-muted">
+                        En los <b>Centros de Integración Juvenil</b>, tenemos la misión de atender el consumo de drogas entre la juventud desde un enfoque de salud pública. 
+                    </p>
+                    <p class="text-justify text-muted">
+                        No nos limitamos a la atención clínica; buscamos reducir la demanda de drogas mediante la investigación científica, la formación de recursos humanos especializados y la participación comunitaria. Somos una institución que protege el tejido social.
+                    </p>
+                    <div class="border-start border-4 border-warning ps-4 mt-4">
+                        <p class="fst-italic mb-0 text-dark">"Nuestra labor salva vidas y reconstruye familias."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="shadow rounded-circle overflow-hidden mx-auto" style="width: 400px; height: 400px; background: #e9ecef;">
+                        <!-- Modelo 3D: Casco (Simboliza la protección institucional y la solidez) -->
+                        <model-viewer 
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                            alt="Solidez Institucional" 
+                            auto-rotate 
+                            camera-controls 
+                            style="width: 100%; height: 100%;">
+                        </model-viewer>
+                        </div>
+                    <small class="text-muted d-block mt-3">Llevarlos a brillar como estrellas.</small>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 mt-5">
+                <h3 class="fw-bold">Nuestros Valores</h3>
+                <div class="mx-auto bg-primary mb-4" style="width: 60px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="value-card text-center">
+                        <i class="fas fa-hand-holding-heart value-icon"></i>
+                        <h4>Humanismo</h4>
+                        <p class="text-muted">El ser humano es el centro de nuestra acción. Respetamos su dignidad, sus derechos y su capacidad de cambio.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card text-center">
+                        <i class="fas fa-microscope value-icon"></i>
+                        <h4>Rigor Científico</h4>
+                        <p class="text-muted">Nuestras intervenciones no se basan en opiniones, sino en evidencia científica y metodologías probadas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card text-center">
+                        <i class="fas fa-users value-icon"></i>
+                        <h4>Solidaridad</h4>
+                        <p class="text-muted">Trabajamos con pasión y compromiso social para apoyar a los sectores más vulnerables de la población.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Dirección General y Patronato Nacional.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

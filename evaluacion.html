@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Psicológica | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; --teal: #17a2b8; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f9fafc; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+
+        /* Page Header Specific */
+        .page-header {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(23, 162, 184, 0.8)), url('https://universidadeuropea.com/resources/media/images/evaluacion_psicologica_og.original.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Content Styles */
+        .info-card {
+            background: white;
+            border-left: 5px solid var(--teal);
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+
+        /* Quiz Styles */
+        .quiz-option {
+            cursor: pointer;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: all 0.2s;
+            background-color: #f8f9fa;
+        }
+        .quiz-option:hover { background-color: #e9ecef; }
+        .quiz-option.selected {
+            background-color: var(--primary-color) !important;
+            color: white;
+            border-color: var(--primary-color);
+        }
+        /* Custom Modal for alerts */
+        #customMessageModal .modal-content {
+            border-radius: 10px;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-4 animate__animated animate__fadeIn">Evaluación Psicológica Integral</h1>
+            <p class="lead opacity-75 w-75 mx-auto">El primer paso hacia el bienestar es comprender lo que sucede en nuestra mente y emociones.</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="container mb-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-7">
+                <h2 class="text-primary mb-3">Diagnóstico Profesional</h2>
+                <p class="text-justify text-muted">
+                    En los Centros de Integración Juvenil, la evaluación psicológica es un proceso fundamental y meticuloso. Utilizamos herramientas psicométricas estandarizadas y entrevistas clínicas profundas para identificar no solo el grado de consumo de sustancias, sino también trastornos asociados como depresión, ansiedad, déficit de atención o problemas de conducta.
+                </p>
+                <p class="text-justify text-muted">
+                    Nuestro objetivo no es etiquetar, sino <b>comprender la historia de vida</b> del paciente para diseñar un "traje a la medida": un plan de tratamiento único que responda a sus necesidades emocionales, cognitivas y sociales.
+                </p>
+            </div>
+            <div class="col-lg-5 text-center">
+                <div class="bg-white p-3 rounded shadow-sm" style="height: 350px;">
+                    <!-- Modelo 3D: Una cabeza estilizada o cerebro, representado por Suzanne como placeholder común de "mente/cognición" -->
+                    <model-viewer 
+                        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                        alt="Análisis Cognitivo" 
+                        auto-rotate 
+                        camera-controls 
+                        style="width: 100%; height: 100%; background-color: #f0f0f0; border-radius: 10px;">
+                    </model-viewer>
+                    <small class="text-muted mt-2 d-block">Análisis multidimensional de la salud mental.</small>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-center mb-4 text-secondary">¿Qué incluye nuestra evaluación?</h3>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="step-number">1</span>
+                        <h5 class="mb-0">Entrevista Inicial</h5>
+                    </div>
+                    <p class="small text-muted">Un espacio seguro donde un psicólogo especialista escucha al paciente y a sus familiares para entender el motivo de consulta y el contexto actual.</p>
+                    <img src="" class="img-fluid rounded mt-2" alt="Entrevista Clínica" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="step-number">2</span>
+                        <h5 class="mb-0">Batería Psicométrica</h5>
+                    </div>
+                    <p class="small text-muted">Aplicación de tests validados científicamente para medir personalidad, inteligencia emocional, daños cognitivos y patrones de consumo.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="step-number">3</span>
+                        <h5 class="mb-0">Devolución de Resultados</h5>
+                    </div>
+                    <p class="small text-muted">Entrega de un informe detallado con el diagnóstico y la propuesta de tratamiento (ambulatorio, semi-residencial o residencial).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-info d-flex align-items-center" role="alert">
+                    <i class="fas fa-info-circle fa-2x me-3"></i>
+                    <div>
+                        <strong>Importante:</strong> La evaluación es totalmente confidencial. Si detectas señales de alerta en ti o en un familiar, no esperes a que el problema avance.
+                        <a href="contacto.html" class="alert-link">Agenda tu cita hoy mismo.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DEL CUESTIONARIO NUEVO -->
+        <div class="text-center mt-5 pt-5 pb-5 border-top">
+            <h3 class="mb-3">Autoevaluación Preliminar</h3>
+            <p class="text-muted w-75 mx-auto mb-4">Realiza este breve cuestionario para identificar posibles factores de riesgo. Es confidencial y sirve como primer paso antes de tu cita.</p>
+            <button class="btn btn-success btn-lg rounded-pill shadow px-5 text-white fw-bold" data-bs-toggle="modal" data-bs-target="#quizModal">
+                <i class="fas fa-clipboard-check me-2"></i> Hacer un pequeño test
+            </button>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Departamento de Psicología Clínica y Diagnóstico.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CUESTIONARIO -->
+    <div class="modal fade" id="quizModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-user-md me-2"></i>Cuestionario de Orientación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="evaluationQuiz">
+                        <!-- Campos de Contacto -->
+                        <div class="mb-4 p-3 bg-light rounded border">
+                            <h6 class="fw-bold text-primary mb-3">Tus Datos de Contacto (Confidencial)</h6>
+                            <div class="mb-3">
+                                <label for="userName" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="userName" required placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="userEmail" required placeholder="ejemplo@correo.com">
+                            </div>
+                        </div>
+
+                        <!-- Preguntas Generadas Dinámicamente -->
+                        <div id="quizContainer"></div>
+
+                        <!-- Pregunta Abierta -->
+                        <div class="mb-4 p-3 bg-light rounded border">
+                            <label class="form-label fw-bold">11. Describe brevemente tu situación general o la razón principal de tu preocupación:</label>
+                            <textarea class="form-control" id="openQuestion" rows="4" placeholder="Escribe aquí..." required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="submitQuiz">Enviar Respuestas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE MENSAJE PERSONALIZADO (Reemplaza a alert()) -->
+    <div class="modal fade" id="customMessageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customMessageTitle">Mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="customMessageBody">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Firebase SDKs y Lógica de la Aplicación -->
+    <script type="module">
+      // IMPORTS - usar la misma versión que en orientacion.html (10.7.1)
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+      // Configuración tomada de orientacion.html (mantener idéntica)
+      const firebaseConfig = {
+        apiKey: "AIzaSyB9uwH40DCrhZdFtKX-85tP3Spz6C03V3s",
+        authDomain: "proyecto-9314f.firebaseapp.com",
+        projectId: "proyecto-9314f",
+        storageBucket: "proyecto-9314f.firebasestorage.app",
+        messagingSenderId: "397576481788",
+        appId: "1:397576481788:web:703fd5201dab99d153e079",
+        measurementId: "G-Y5EC90ZKV5"
+      };
+
+      // Inicializar Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      // Estado de autenticación
+      let isAuthReady = false;
+      let userId = null;
+
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+              userId = user.uid;
+              isAuthReady = true;
+              console.log("Usuario autenticado (onAuthStateChanged). UID:", userId);
+          } else {
+              // Intentar iniciar sesión anónima automáticamente
+              signInAnonymously(auth).then(cred => {
+                  userId = cred.user.uid;
+                  isAuthReady = true;
+                  console.log("Sesión anónima iniciada (onAuthStateChanged fallback). UID:", userId);
+              }).catch(err => {
+                  console.warn("No se pudo iniciar sesión anónima automáticamente:", err);
+                  // aún así marcamos ready para permitir intento de guardado y mostrar mensajes de error específicos
+                  isAuthReady = true;
+              });
+          }
+      });
+
+      // -------------------------
+      // Generación de preguntas (mantener como tienes)
+      // -------------------------
+      const questions = [
+          "1. ¿Con qué frecuencia consumes sustancias (alcohol, tabaco u otras)?",
+          "2. ¿Has sentido que deberías disminuir tu consumo?",
+          "3. ¿Te has sentido culpable por tu manera de beber o consumir?",
+          "4. ¿Alguna vez has necesitado consumir por la mañana para calmar los nervios?",
+          "5. ¿Has dejado de cumplir con tus obligaciones laborales o escolares por el consumo?",
+          "6. ¿Algún familiar o amigo te ha expresado preocupación por tu consumo?",
+          "7. ¿Has tenido problemas legales o accidentes bajo el efecto de sustancias?",
+          "8. ¿Sientes ansiedad o irritabilidad cuando no estás consumiendo?",
+          "9. ¿Has intentado dejarlo antes sin éxito?",
+          "10. ¿Sientes que el consumo afecta tus relaciones personales?"
+      ];
+
+      const options = ["Nunca", "Raramente", "A veces", "Frecuentemente", "Siempre"];
+      const container = document.getElementById('quizContainer');
+
+      questions.forEach((q, index) => {
+          const qDiv = document.createElement('div');
+          qDiv.className = "mb-4 border-bottom pb-3";
+          qDiv.innerHTML = `
+              <label class="form-label fw-bold mb-2">${q}</label>
+              <div class="row g-2">
+                  ${options.map(opt => `
+                      <div class="col-6 col-md">
+                          <div class="quiz-option text-center" data-question-id="q${index}">
+                              <input type="radio" name="q${index}" value="${opt}" class="d-none" required>
+                              ${opt}
+                          </div>
+                      </div>
+                  `).join('')}
+              </div>
+          `;
+          container.appendChild(qDiv);
+      });
+
+      // Delegación de click en opciones (maneja dinámicos también)
+      document.addEventListener('click', (ev) => {
+          const el = ev.target.closest('.quiz-option');
+          if (!el) return;
+          const groupName = el.getAttribute('data-question-id');
+          document.querySelectorAll(`[data-question-id="${groupName}"]`).forEach(sibling => sibling.classList.remove('selected'));
+          el.classList.add('selected');
+          const input = el.querySelector('input[type="radio"]');
+          if (input) input.checked = true;
+      });
+
+      // --- ENVÍO DEL CUESTIONARIO ---
+      document.getElementById('submitQuiz').addEventListener('click', async () => {
+          const btn = document.getElementById('submitQuiz');
+
+          // Recolección y validación
+          const name = document.getElementById('userName').value.trim();
+          const email = document.getElementById('userEmail').value.trim();
+          const openAns = document.getElementById('openQuestion').value.trim();
+
+          if (!name || !email || !openAns) {
+              showCustomMessage("Error", "Por favor completa tu Nombre, Correo Electrónico y la Situación General.", true);
+              return;
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+              showCustomMessage("Error", "Por favor ingresa un formato de correo electrónico válido.", true);
+              return;
+          }
+
+          // Validar respuestas multiple choice
+          const answers = { nombre: name, email: email };
+          let allAnswered = true;
+          let totalScore = 0;
+          const scoreMap = {"Siempre": 4, "Frecuentemente": 3, "A veces": 2, "Raramente": 1, "Nunca": 0};
+
+          for (let i = 0; i < 10; i++) {
+              const selected = document.querySelector(`input[name="q${i}"]:checked`);
+              if (!selected) { allAnswered = false; break; }
+              answers[`pregunta_${i+1}`] = selected.value;
+              totalScore += scoreMap[selected.value] || 0;
+          }
+
+          if (!allAnswered) {
+              showCustomMessage("Error", "Asegúrate de responder las 10 preguntas de opción múltiple.", true);
+              return;
+          }
+
+          answers['situacion_general'] = openAns;
+          answers['score_riesgo_total'] = totalScore;
+
+          // Botón cargando
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+          btn.disabled = true;
+
+          try {
+              // Si aún no hay usuario, forzamos inicio anónimo (intento adicional)
+              if (!userId) {
+                  try {
+                      const cred = await signInAnonymously(auth);
+                      userId = cred.user.uid;
+                      console.log("signInAnonymously (forced) UID:", userId);
+                  } catch (authErr) {
+                      console.warn("No se pudo iniciar anónima al enviar:", authErr);
+                      // Continuar: Firestore puede rechazar por reglas
+                  }
+              }
+
+              // Ruta (colección hija): artifacts/{appId}/public/data/evaluaciones
+              const appId = typeof __app_id !== 'undefined' ? __app_id : 'cij-app-default';
+              await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'evaluaciones'), {
+                  ...answers,
+                  userId: userId,
+                  timestamp: serverTimestamp(),
+                  tipo: "Autoevaluación Rápida"
+              });
+
+              showCustomMessage("¡Éxito!", "¡Gracias por completar el cuestionario! Tus respuestas han sido registradas de forma confidencial.", false);
+
+              // Limpieza UI
+              document.getElementById('evaluationQuiz').reset();
+              document.querySelectorAll('.quiz-option').forEach(el => el.classList.remove('selected'));
+
+              // Cerrar modal quiz
+              const quizModal = bootstrap.Modal.getInstance(document.getElementById('quizModal'));
+              if (quizModal) quizModal.hide();
+
+          } catch (e) {
+              console.error("Error al guardar en Firestore:", e);
+              if (e && e.code === 'permission-denied') {
+                  showCustomMessage("Error de permisos", "Las reglas de Firestore están impidiendo la escritura. Revisa las reglas o habilita autenticación anónima en Firebase Console.", true);
+              } else {
+                  showCustomMessage("Error de Guardado", "Hubo un error al guardar tus respuestas. Por favor verifica la conexión e inténtalo nuevamente.", true);
+              }
+          } finally {
+              btn.innerHTML = originalText;
+              btn.disabled = false;
+          }
+      });
+
+      // Modal helper (si ya existe otra definición, esta es segura y compatible)
+      function showCustomMessage(title, message, isError = false) {
+          const modal = new bootstrap.Modal(document.getElementById('customMessageModal'));
+          document.getElementById('customMessageTitle').textContent = title;
+          document.getElementById('customMessageBody').innerHTML = `<p class="${isError ? 'text-danger' : ''}">${message}</p>`;
+          modal.show();
+      }
+    </script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

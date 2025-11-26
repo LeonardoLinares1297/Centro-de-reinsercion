@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión y Futuro | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f9fafc; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-weight: 700; }
+        
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+        
+        /* Header interno */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            /* aumentar separacion para que elementos sticky no solapen el header */
+            margin-bottom: 80px;
+        }
+        
+        .vision-card {
+            border-left: 5px solid var(--secondary-color);
+            background: white;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            /* usar min-height en lugar de height:100% para evitar estirados que rompen el layout */
+            min-height: 180px;
+        }
+
+        /* Galería Estática */
+        .gallery-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        /* asegurarse que el sticky no se superponga con header/navbar */
+        .gallery-container.sticky-top {
+            position: sticky;
+            top: 100px; /* ajuste según altura de navbar + espacio */
+            z-index: 1020;
+        }
+        .img-gallery {
+            border-radius: 8px;
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            transition: opacity 0.3s;
+        }
+        .img-gallery:hover { opacity: 0.9; }
+        model-viewer { display: block; width: 100%; height: 100%; }
+        
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeIn">Hacia un Futuro Sin Adicciones</h1>
+            <p class="lead text-white-50">Proyección Institucional 2030: Innovación, Cobertura y Calidad</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <div class="vision-card">
+                    <h2><i class="fas fa-eye me-3 text-primary"></i>La Aspiración CIJ</h2>
+                    <p class="mt-3 lead text-muted" style="text-align: justify;">
+                        Aspiramos a consolidarnos como la red líder en América Latina en la atención de adicciones, reconocida por su capacidad de respuesta ante las nuevas tendencias de consumo y por la excelencia de sus programas digitales y presenciales.
+                    </p>
+                    <p style="text-align: justify;" class="text-muted">
+                        Visualizamos un México donde cada joven tenga acceso a información veraz y a servicios de salud mental de calidad, sin importar su ubicación geográfica o condición social, integrando la tecnología como un puente hacia el bienestar.
+                    </p>
+                </div>
+
+                <h3 class="mb-4 mt-5">Metas Estratégicas</h3>
+                <!-- asegurar que las cards dentro se estiren a la misma altura -->
+                <div class="row g-3 align-items-stretch">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-globe-americas fa-3x text-info mb-3"></i>
+                                <h5 class="card-title">Cobertura Digital Total</h5>
+                                <p class="card-text small text-muted">Expansión de servicios de telemedicina y prevención online para alcanzar zonas rurales y de difícil acceso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-brain fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Investigación Avanzada</h5>
+                                <p class="card-text small text-muted">Consolidación de centros de investigación en neurociencias aplicadas para mejorar los protocolos de rehabilitación.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-leaf fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Infraestructura Sustentable</h5>
+                                <p class="card-text small text-muted">Modernización de unidades operativas bajo estándares ecológicos y de eficiencia energética.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body text-center">
+                                <i class="fas fa-university fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">Academia CIJ</h5>
+                                <p class="card-text small text-muted">Certificación internacional de nuestros programas de posgrado y especialización en adicciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="gallery-container sticky-top" style="top: 100px; z-index: 1;">
+                    <h5 class="mb-3 border-bottom pb-2">Proyección Tecnológica</h5>
+                    
+                    <!-- Modelo 3D Informativo -->
+                    <div style="height: 250px; background-color: #f8f9fa; border-radius: 8px; margin-bottom: 20px; overflow: hidden;">
+                        <model-viewer 
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                            alt="Exploración del Futuro" 
+                            auto-rotate 
+                            camera-controls 
+                            style="width: 100%; height: 100%;">
+                        </model-viewer>
+                    </div>
+                    <p class="small text-muted text-center fst-italic">Representación de la exploración de nuevas fronteras en salud mental.</p>
+
+                    <h5 class="mt-4 mb-3 border-bottom pb-2">Infraestructura Futura</h5>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-gallery" alt="Unidades Modernas">
+                        </div>
+                        <div class="col-6">
+                            
+                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-gallery" alt="Laboratorios">
+                        </div>
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-gallery" alt="Edificios Verdes">
+                        </div>
+                        <div class="col-6">
+                            
+                            <img src="https://figueras.com/wp-content/uploads/2023/06/Gicsaretoc2.jpg" class="img-gallery" alt="Tecnología VR">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Dirección de Planeación Estratégica.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

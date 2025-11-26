@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Centros de Integración Juvenil</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #003366; /* Azul Institucional */
+            --secondary-color: #0055a5;
+            --accent-color: #00a8cc;
+            --light-bg: #f4f7f6;
+            --gray-text: #6c757d;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* --- NAVBAR UNIFICADO --- */
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color) !important;
+            transform: translateY(-2px);
+        }
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .dropdown-item:hover {
+            background-color: #e9ecef;
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-home {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 30, 60, 0.95)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 160px 0 180px; /* Más espacio abajo para el corte */
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        /* --- CARDS (Servicios) --- */
+        .feature-box {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            border-bottom: 5px solid var(--primary-color);
+            height: 100%;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--accent-color);
+        }
+        .icon-circle {
+            width: 70px; height: 70px;
+            background: #eef2f7;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* --- SECCIONES NUEVAS --- */
+        .video-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border: 5px solid white;
+        }
+
+        /* Miniatura de video con overlay de play */
+        .video-thumb { cursor: pointer; position: relative; display: block; width: 100%; }
+        .video-thumb img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .video-thumb .play-button {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0,0,0,0.45);
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        }
+        .video-thumb:focus { outline: 3px solid rgba(0,168,204,0.45); outline-offset: 4px; }
+
+        .stats-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 0; }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '\201C'; /* Comillas gigantes */
+            font-size: 80px;
+            color: #eef2f7;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #002244; /* Un poco más oscuro */
+            color: white;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+        footer a { color: #aad4ff; text-decoration: none; transition: 0.3s; }
+        footer a:hover { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hands-helping me-2"></i>CIJ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill fw-bold" href="contacto.html" style="border:2px solid rgba(255,255,255,0.8);">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-home">
+        <div class="container">
+            <h1 class="display-3 mb-4 animate__animated animate__fadeInDown fw-bolder">Centros de Integración Juvenil</h1>
+            <h2 class="lead mb-5 w-75 mx-auto opacity-90 fw-light">
+                "Para vivir sin adicciones." <br>
+                Institución líder dedicada a la prevención, tratamiento, rehabilitación e investigación científica del consumo de drogas en México.
+            </h2>
+            <a href="evaluacion.html" class="btn btn-light text-primary fw-bold btn-lg rounded-pill px-5 shadow-lg">Comienza tu proceso</a>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="shadow-lg rounded-3 overflow-hidden p-3 bg-white">
+                        <model-viewer 
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                            alt="Explorando un futuro libre de adicciones" 
+                            auto-rotate 
+                            camera-controls 
+                            exposure="1.5"
+                            shadow-intensity="1"
+                            style="width: 100%; height: 400px; border-radius: 10px;">
+                        </model-viewer>
+                    </div>
+                    <small class="text-muted mt-2 d-block text-center">Modelo interactivo: Arrastra para girar.</small>
+                </div>
+
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="text-primary mb-4 border-bottom pb-2" style="display:inline-block;">Modelo de Atención Integral</h2>
+                    <p class="text-justify text-muted lead fw-light">
+                        La salud mental es el pilar del desarrollo integral humanno y para ayudar a lograr contamos con más de  Con más de 50 años de experiencia y con un modelo que transforma vidas.
+                    </p>
+                    <p class="text-muted">
+                        No solo tratamos el consumo; abordamos las causas, fortalecemos lazos familiares y brindamos herramientas para reconstruir proyectos de vida.
+                    </p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt text-info fa-lg me-3"></i>
+                            <span class="fw-bold text-dark">Prevención en escuelas y comunidades.</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-md text-info fa-lg me-3"></i>
+                            <span class="fw-bold text-dark">Tratamiento médico y psicológico.</span>
+                        </div>
+                    </div>
+                    <a href="mision.html" class="btn btn-outline-primary rounded-pill mt-2">Leer más sobre nosotros</a>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Prevención</h4>
+                        <p class="text-muted small">Fortalecemos factores de protección mediante programas informativos y talleres.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-stethoscope"></i></div>
+                        <h4>Tratamiento</h4>
+                        <p class="text-muted small">Terapias personalizadas basadas en evidencia científica y calidez humana.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-walking"></i></div>
+                        <h4>Reinserción</h4>
+                        <p class="text-muted small">Apoyo continuo para la reintegración social, laboral y familiar exitosa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <span class="text-uppercase text-primary fw-bold small ls-1">Conócenos mejor</span>
+                    <h2 class="mb-3">Más de 50 años salvando vidas</h2>
+                    <p class="text-muted mb-4">
+                        Descubre cómo nuestros centros operan día a día para brindar esperanza a miles de familias mexicanas. Nuestro compromiso es contigo y con tu bienestar.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Atención especializada.</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Instalaciones seguras.</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Personal certificado.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <div class="video-wrapper">
+                        <!-- Miniatura clicable: se carga el iframe seguro al hacer clic -->
+                        <div class="video-thumb" data-video-id="jXVs5dLYRz0" role="button" tabindex="0" aria-label="Reproducir Video Institucional CIJ">
+                            <img src="https://img.youtube.com/vi/jXVs5dLYRz0/maxresdefault.jpg" alt="Video Institucional CIJ" onerror="this.src='https://img.youtube.com/vi/jXVs5dLYRz0/hqdefault.jpg'">
+                            <div class="play-button"><i class="fab fa-youtube fa-2x"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0 stat-item">
+                    <i class="fas fa-map-marked-alt fa-3x mb-3 text-white-50"></i>
+                    <h3>120+</h3>
+                    <p class="text-white-50">Unidades Operativas</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 stat-item">
+                    <i class="fas fa-users fa-3x mb-3 text-white-50"></i>
+                    <h3>10M+</h3>
+                    <p class="text-white-50">Personas Atendidas</p>
+                </div>
+                <div class="col-md-4 stat-item">
+                    <i class="fas fa-graduation-cap fa-3x mb-3 text-white-50"></i>
+                    <h3>50</h3>
+                    <p class="text-white-50">Años de Experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección nueva: Programas Destacados -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="text-primary">Programas Destacados</h2>
+                <p class="text-muted">Programas interdisciplinarios con enfoque preventivo, terapéutico y de reinserción.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-school"></i></div>
+                        <h4>Prevención Escolar</h4>
+                        <p class="text-muted small">Intervenciones en escuelas con metodologías participativas y capacitación docente.</p>
+                        <a href="prevencion.html" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-user-md"></i></div>
+                        <h4>Atención Clínica</h4>
+                        <p class="text-muted small">Protocolos médicos y psicológicos integrales basados en evidencia científica.</p>
+                        <a href="tratamiento.html" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-briefcase"></i></div>
+                        <h4>Reinserción Laboral</h4>
+                        <p class="text-muted small">Talleres de habilidades, acompañamiento laboral y alianzas con empresas sociales.</p>
+                        <a href="reinsercion.html" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección nueva: Recursos y Herramientas -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="mb-2">Recursos y Ayuda</h3>
+                    <p class="text-muted">Guía de prevencion y actuacion para familiares, e informacion sobre las carreras que ofrecemos.</p>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="fas fa-phone text-primary me-2"></i><strong>Línea de apoyo:</strong> 55 1234 5678 (24/7)</li>
+                        <li class="mb-2"><i class="fas fa-file-download text-primary me-2"></i><a href="guia_familias.html">Guía para familias</a></li>
+                        <li class="mb-2"><i class="fas fa-book-reader text-primary me-2"></i><a href="materiales_talleres.html">Materiales educativos y talleres</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="mb-3">Atención inmediata</h5>
+                        <p class="mb-1"><strong>Servicios presenciales:</strong> Encuentra la unidad más cercana en <a href="contacto.html">nuestro mapa</a>.</p>
+                        <p class="mb-0"><strong>Soporte profesional:</strong> Consultas virtuales y telefónicas disponibles ahora.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3 fw-bold text-uppercase ls-1">CIJ Nacional</h5>
+                    <p class="text-white-50 small">
+                        Compromiso, Humanismo y Ciencia en la atención de las adicciones. Trabajamos por una juventud sana y libre.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3 fw-bold text-uppercase ls-1">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="mision.html"><i class="fas fa-angle-right me-2"></i>Nuestra Misión</a></li>
+                        <li><a href="vision.html"><i class="fas fa-angle-right me-2"></i>Nuestra Visión</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-angle-right me-2"></i>Ubicaciones</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+    <h5 class="mb-3 fw-bold text-uppercase ls-1">Contacto Urgente</h5>
+    <p class="small text-white-50 mb-1"><i class="fas fa-phone-alt me-2"></i> 55 1234 5678</p>
+    <p class="small text-white-50"><i class="fas fa-envelope me-2"></i> contacto@cij.gob.mx</p>
+
+    <div class="mt-3 social-icons">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/1BnKNrQg3Z/" target="_blank" class="me-3 text-white">
+            <i class="fab fa-facebook fa-lg"></i>
+        </a>
+
+        <!-- Twitter (X) -->
+        <a href="https://x.com/CIJ_Adicciones" target="_blank" class="me-3 text-white">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/centrosdeintegracionjuvenil" target="_blank" class="text-white">
+            <i class="fab fa-instagram fa-lg"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+            <hr class="border-secondary mt-3">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0 text-white-50 small">© 2025 Centros de Integración Juvenil.</p>
+                <p class="mb-0 text-white-50 small">Política de Privacidad | Términos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cargar el iframe de forma perezosa al click en la miniatura
+        document.querySelectorAll('.video-thumb').forEach(function(el){
+            function loadIframe(){
+                var id = el.dataset.videoId;
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&modestbranding=1&autoplay=1');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                var ratio = document.createElement('div');
+                ratio.className = 'ratio ratio-16x9';
+                ratio.appendChild(iframe);
+                el.parentNode.replaceChild(ratio, el);
+            }
+            el.addEventListener('click', loadIframe);
+            el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadIframe(); } });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinserción Social | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <style>
+        :root { --primary-color: #003366; --orange-brand: #fd7e14; --green-brand: #28a745; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #fff; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+
+        /* Hero */
+        .hero-social {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(255, 255, 255, 0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 130px 0;
+            text-align: center;
+        }
+
+        /* Cards */
+        .rehab-card {
+            border: none;
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .rehab-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .badge-custom { background-color: var(--orange-brand); color: white; }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item active" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-social">
+        <div class="container">
+            <h1 class="display-3 mb-3 animate__animated animate__fadeInDown">Nueva Vida, Nuevas Metas</h1>
+            <p class="lead w-75 mx-auto">La rehabilitación no termina al dejar el consumo. Te acompañamos a reconstruir tu proyecto de vida, volver a la escuela y conseguir empleo.</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="py-5">
+        <div class="container">
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="text-primary fw-bold mb-4">Reintegración Productiva</h2>
+                    <p class="text-justify text-muted">
+                        El proceso de <b>Reinserción Social</b> es la etapa final y crucial del tratamiento. Su objetivo es dotar al paciente de habilidades prácticas para enfrentar el mundo real de manera autónoma y responsable.
+                    </p>
+                    <p class="text-justify text-muted">
+                        Trabajamos mediante convenios con instituciones educativas y empresas socialmente responsables para abrir puertas que antes parecían cerradas. Creemos en las segundas oportunidades y en el potencial de nuestros jóvenes.
+                    </p>
+                    <div class="mt-4">
+                        <a href="materiales_talleres.html" class="btn btn-success rounded-pill px-4"><i class="fas fa-briefcase me-2"></i> Carreras tecnicas</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div style="height: 350px; background: #e9ecef; border-radius: 20px; overflow:hidden;" class="shadow-sm mt-4 mt-lg-0">
+                        <!-- Modelo 3D: Robot Expresivo (Simboliza tecnología, aprendizaje y futuro laboral) -->
+                        <model-viewer 
+                            src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
+                            alt="Capacitación Tecnológica" 
+                            animation-name="Wave" 
+                            autoplay 
+                            camera-controls 
+                            style="width:100%; height:100%;">
+                        </model-viewer>
+                    </div>
+                    <small class="text-muted mt-2 d-block">Capacitación para el futuro laboral.</small>
+                </div>
+            </div>
+
+            <h3 class="text-center mb-5 fw-bold" style="color: var(--primary-color);">Pilares de la Reinserción</h3>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="rehab-card shadow-sm">
+                        <img src="[Image of classroom with adult students]" class="card-img-top" alt="Retorno Educativo" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'">
+                        <div class="p-4">
+                            <span class="badge badge-custom mb-2">Educación</span>
+                            <h5>Retorno Académico</h5>
+                            <p class="small text-muted">Apoyamos la revalidación de estudios y la inscripción a sistemas de bachillerato abierto o universidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="rehab-card shadow-sm">
+                        <img src="" class="card-img-top" alt="Capacitación Laboral" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'">
+                        <div class="p-4">
+                            <span class="badge badge-custom mb-2">Trabajo</span>
+                            <h5>Capacitación Laboral</h5>
+                            <p class="small text-muted">Talleres de oficios (carpintería, computación, electricidad) para fomentar el autoempleo inmediato.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="rehab-card shadow-sm">
+                        <img src="[Image of youth playing sports]" class="card-img-top" alt="Deporte y Cultura" onerror="this.src='https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'">
+                        <div class="p-4">
+                            <span class="badge badge-custom mb-2">Bienestar</span>
+                            <h5>Actividades Recreativas</h5>
+                            <p class="small text-muted">Fomentamos el uso saludable del tiempo libre a través del deporte, el arte y la cultura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Área de Reinserción Social y Laboral.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f8f9fa; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #00a8cc !important; }
+
+        .contact-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .info-icon {
+            width: 50px; height: 50px;
+            background: #e9ecef;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            flex-shrink: 0; 
+        }
+
+        /* Estilos nuevos para los enlaces de ciudades */
+        .city-link {
+            color: #6c757d; /* Gris muted por defecto */
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+        }
+        .city-link:hover {
+            color: var(--secondary-color); /* Cambia a azul CIJ */
+            transform: translateX(5px); /* Pequeño movimiento a la derecha */
+        }
+
+        .form-control, .form-select {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            background-color: #fff;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(0, 85, 165, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">Preguntas frecuentes</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-lg-3 px-4 rounded-pill active" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="contact-header">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Estamos para Escucharte</h1>
+            <p class="lead opacity-75">Localiza tu unidad más cercana o envíanos un mensaje directo.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-5">
+                    <div class="info-box mb-4">
+                        <h3 class="mb-4 text-primary">Información Institucional</h3>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Oficinas Centrales</h6>
+                                <p class="mb-0 text-muted small">Av. Insurgentes Sur 1234, Col. Del Valle, CDMX.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">CIJ Contigo (24hrs)</h6>
+                                <p class="mb-0 text-muted small">55 5212 1212 / WhatsApp: 55 4555 1212</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Correo Electrónico</h6>
+                                <p class="mb-0 text-muted small">cij@cij.gob.mx</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Horario Administrativo</h6>
+                                <p class="mb-0 text-muted small">Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4 text-muted opacity-25">
+
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-map-marked-alt me-2 text-primary"></i>Otras sucursales en:</h5>
+                            <p class="small text-muted mb-2">
+                                Haz clic en la ciudad para ver la ubicación en el mapa:
+                            </p>
+                            <ul class="list-unstyled small row">
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Guadalajara" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Guadalajara
+                                    </a>
+                                </li>
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Monterrey" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Monterrey
+                                    </a>
+                                </li>
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Puebla" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Puebla
+                                    </a>
+                                </li>
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Tijuana" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Tijuana
+                                    </a>
+                                </li>
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Merida" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Mérida
+                                    </a>
+                                </li>
+                                <li class="col-6 mb-2">
+                                    <a href="https://www.google.com/maps/search/Centros+de+Integracion+Juvenil+Toluca" target="_blank" class="city-link">
+                                        <i class="fas fa-angle-right me-1 text-secondary"></i> Toluca
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rounded-3 overflow-hidden border shadow-sm">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120401.07860039752!2d-99.24441221079333!3d19.43254307117573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fd8665ccbdc7%3A0x5c927fe2ab70931!2sCentro%20de%20Integraci%C3%B3n%20Juvenil%20A.C.!5e0!3m2!1ses!2smx!4v1763869470695!5m2!1ses!2smx" width="100%" height="250" style="border:0; display:block;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+                        <h3 class="mb-4">Envíanos un mensaje</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Nombre Completo</label>
+                                    <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Teléfono</label>
+                                    <input type="tel" id="telefono" class="form-control" placeholder="(55) ..." required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Correo Electrónico</label>
+                                    <input type="email" id="email" class="form-control" placeholder="nombre@ejemplo.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Servicio de Interés</label>
+                                    <select class="form-select" id="servicio">
+                                        <option selected>Información General</option>
+                                        <option>Evaluación Psicológica</option>
+                                        <option>Tratamiento Terapéutico</option>
+                                        <option>Orientación Familiar</option>
+                                        <option>Carreras técnicas</option>
+                                        <option>Seguimiento jurídico</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu consulta aquí..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" id="btnEnviar" class="btn btn-primary w-100 fw-bold py-2 rounded-pill">Enviar Mensaje</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="statusMessage" class="mt-3"></div>
+                    </div>
+
+                    <div class="rounded-3 overflow-hidden shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120401.07860039752!2d-99.24441221079333!3d19.43254307117573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fd8665ccbdc7%3A0x5c927fe2ab70931!2sCentro%20de%20Integraci%C3%B3n%20Juvenil%20A.C.!5e0!3m2!1ses!2smx!4v1763869470695!5m2!1ses!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Unidad de Atención al Usuario.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyB9uwH40DCrhZdFtKX-85tP3Spz6C03V3s",
+          authDomain: "proyecto-9314f.firebaseapp.com",
+          projectId: "proyecto-9314f",
+          storageBucket: "proyecto-9314f.firebasestorage.app",
+          messagingSenderId: "397576481788",
+          appId: "1:397576481788:web:703fd5201dab99d153e079",
+          measurementId: "G-Y5EC90ZKV5"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      let userId = null;
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+              userId = user.uid;
+          } else {
+              signInAnonymously(auth).then(cred => {
+                  userId = cred.user.uid;
+              }).catch(err => {
+                  console.warn("Error auth anónima:", err);
+              });
+          }
+      });
+
+      const form = document.getElementById('contactForm');
+      const statusDiv = document.getElementById('statusMessage');
+
+      form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById('btnEnviar');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+          btn.disabled = true;
+
+          const datos = {
+              nombre: document.getElementById('nombre').value.trim(),
+              telefono: document.getElementById('telefono').value.trim(),
+              email: document.getElementById('email').value.trim(),
+              servicio: document.getElementById('servicio').value,
+              mensaje: document.getElementById('mensaje').value.trim(),
+              fecha: serverTimestamp()
+          };
+
+          try {
+              if (!userId) {
+                  try {
+                      const cred = await signInAnonymously(auth);
+                      userId = cred.user.uid;
+                  } catch (authErr) { console.warn("Error auth fallback:", authErr); }
+              }
+
+              const appId = typeof __app_id !== 'undefined' ? __app_id : 'cij-app-default';
+              await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'contactos'), {
+                  ...datos,
+                  userId: userId,
+                  receivedAt: serverTimestamp()
+              });
+
+              statusDiv.innerHTML = '<div class="alert alert-success">¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.</div>';
+              form.reset();
+          } catch (error) {
+              console.error("Error al guardar contacto:", error);
+              if (error && error.code === 'permission-denied') {
+                  statusDiv.innerHTML = '<div class="alert alert-danger">Permisos denegados.</div>';
+              } else {
+                  statusDiv.innerHTML = '<div class="alert alert-danger">Hubo un error al enviar el mensaje.</div>';
+              }
+          } finally {
+              btn.innerHTML = originalText;
+              btn.disabled = false;
+          }
+      });
+    </script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | CIJ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; --accent-color: #00a8cc; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f9fafc; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-weight: 700; }
+        
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; transition: 0.3s; }
+        .nav-link:hover { color: #00a8cc !important; }
+        
+        /* Header interno */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* FAQ Styling */
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .accordion-button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px 20px;
+        }
+        .accordion-button:not(.collapsed) {
+            color: var(--accent-color);
+            background-color: #e9f6ff;
+            box-shadow: none;
+        }
+        .accordion-body {
+            background-color: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+            padding: 20px;
+            color: #555;
+        }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios Integrales</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Preguntas Frecuentes (FAQ)</h1>
+            <p class="lead text-white-50">Encuentra respuestas rápidas sobre nuestros servicios, procesos y políticas.</p>
+        </div>
+    </header>
+
+    <!-- FAQ SECTION -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <h2 class="mb-4 text-center">Información General y Servicios</h2>
+
+                <div class="accordion" id="faqAccordion">
+                    
+                    <!-- Pregunta 1: Confidencialidad -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <i class="fas fa-lock me-3 text-secondary"></i> ¿Son confidenciales todos los servicios?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sí. La confidencialidad es un pilar fundamental de nuestra institución. Toda la información personal y los detalles de las consultas o tratamientos están estrictamente protegidos bajo el secreto profesional y la Ley de Protección de Datos Personales. Solo se revelará información en casos excepcionales que involucren un riesgo inminente para la vida del usuario o de terceros, conforme a la ley.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2: Costos -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="fas fa-hand-holding-usd me-3 text-secondary"></i> ¿Tienen algún costo los servicios de evaluación o tratamiento?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nuestros servicios están diseñados para ser accesibles. La mayoría de los servicios de orientación y prevención son gratuitos. Para los tratamientos y evaluaciones especializadas, aplicamos una **cuota de recuperación mínima** que se establece con base en un estudio socioeconómico. Nuestro objetivo es que nadie quede sin atención por motivos económicos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3: Proceso de Admisión -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="fas fa-user-plus me-3 text-secondary"></i> ¿Cómo es el proceso para iniciar un tratamiento?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                El proceso es sencillo:
+                                <ol>
+                                    <li>**Primer Contacto:** Llama a nuestra línea de apoyo o visita la página de <a href="contacto.html">Contacto</a> para agendar una cita.</li>
+                                    <li>**Evaluación Inicial:** Un especialista realizará una evaluación psicológica para determinar el tipo de apoyo requerido.</li>
+                                    <li>**Diseño del Plan:** Se creará un plan de tratamiento personalizado (terapéutico, familiar, etc.).</li>
+                                    <li>**Inicio del Tratamiento:** Comienzas tu proceso de recuperación.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4: Duración del Tratamiento -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <i class="fas fa-clock me-3 text-secondary"></i> ¿Cuánto tiempo dura un tratamiento de adicciones?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                La duración es variable y depende completamente del plan de tratamiento individualizado, el tipo de adicción, la severidad y el compromiso del usuario. Nuestros tratamientos son ambulatorios (no internamiento) y suelen tener una duración promedio de 6 a 12 meses, incluyendo la fase de reinserción y seguimiento.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5: Apoyo Familiar -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <i class="fas fa-user-friends me-3 text-secondary"></i> ¿Qué papel juega la familia en el proceso?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                La participación familiar es crucial. Ofrecemos programas de **Orientación Familiar** específicos porque la adicción afecta a todo el sistema. El apoyo y la comprensión de la familia son determinantes para el éxito del tratamiento y la prevención de recaídas.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="alert alert-info mt-5 p-4 text-center">
+                    <i class="fas fa-question-circle me-2"></i> ¿No encontraste tu respuesta? No dudes en contactar a nuestra línea de apoyo confidencial: .
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">Centros de Integración Juvenil</h5>
+                    <p class="small text-white-50">Unidad de Atención al Usuario.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CIJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

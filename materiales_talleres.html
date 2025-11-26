@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Educativos y Talleres | CIJ</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #0055a5; --accent-color: #ff9900; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #f7f9fb; color: #333; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-weight: 700; }
+        
+        /* Navbar */
+        .navbar { background-color: var(--primary-color); }
+        .nav-link { color: white !important; transition: 0.3s; }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Estilo de Tarjetas de Taller */
+        .taller-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        .taller-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .taller-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .taller-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .badge-tech {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Modal personalizado */
+        .modal-header { background-color: var(--primary-color); color: white; border-radius: 12px 12px 0 0; }
+        .modal-content { border-radius: 12px; }
+        .modal-title i { margin-right: 10px; }
+
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        footer a { color: #aad4ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="proyecto.html"><i class="fas fa-hands-helping me-2"></i>CIJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="evaluacion.html">Evaluación Psicológica</a></li>
+                            <li><a class="dropdown-item" href="tratamiento.html">Tratamiento Terapéutico</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html">Orientación Familiar</a></li>
+                            <li><a class="dropdown-item" href="juridico.html">Seguimiento Jurídico</a></li>
+                            <li><a class="dropdown-item" href="reinsercion.html">Proceso de Reinserción</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="guia_familias.html">Guía para Familias</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="materiales.html">Materiales Educativos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Oportunidades Técnicas y Educativas</h1>
+            <p class="lead text-white-50">Capacitación de alto valor para una reinserción laboral exitosa.</p>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE CARRERAS TÉCNICAS -->
+    <section class="container my-5">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2>Certificaciones y Carreras Técnicas</h2>
+                <p class="lead text-muted">Ofrecemos programas intensivos diseñados para satisfacer la demanda del mercado laboral actual.</p>
+            </div>
+        </div>
+
+        <!-- Contenedor donde se inyectarán las tarjetas dinámicamente -->
+        <div class="row g-4" id="carreras-container">
+            <!-- Las tarjetas se insertarán aquí por JavaScript -->
+        </div>
+
+        <div class="alert alert-info mt-5 p-4 text-center">
+            <i class="fas fa-certificate me-2"></i> Todos nuestros cursos y talleres ofrecen un <h2>Certificado de Competencias Laborales</h2> ¡Inscríbete hoy! <br>Recuerda que solo son carreras tecnicas, no hay carreras universitarias.
+        </div>
+    </section>
+
+    <!-- MODAL DE DETALLES DE LA CARRERA -->
+    <div class="modal fade" id="carreraDetailModal" tabindex="-1" aria-labelledby="carreraDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"><i class="fas fa-graduation-cap"></i> Nombre de la Carrera</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <img id="modal-image" src="" class="img-fluid rounded-3 shadow-sm" alt="Imagen de la carrera">
+                        </div>
+                        <div class="col-md-7">
+                            <h6 class="text-primary fw-bold">Descripción del Programa</h6>
+                            <p id="modal-description" class="small text-muted"></p>
+                            
+                            <h6 class="text-primary fw-bold mt-3">Duración y Certificación</h6>
+                            <p id="modal-duration" class="small text-muted"></p>
+                            
+                            <h6 class="text-primary fw-bold mt-3">Campo Laboral Típico</h6>
+                            <p id="modal-campo-laboral" class="small text-muted"></p>
+
+                            <a href="contacto.html" class="btn btn-success mt-4 w-100 fw-bold">¡Quiero Inscribirme!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="fw-bold mb-2">CEJUV | Centro Educativo Juvenil</h5>
+                    <p class="small text-white-50">Educación, Oportunidad y Futuro.</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="mb-0 text-white-50 small">© 2025 CEJUV. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 1. Datos de las Carreras
+        const careers = [
+            {
+                id: 'logistica',
+                title: 'Logística y Cadena de Suministro',
+                tag: 'Operaciones',
+                icon: 'fas fa-truck',
+                summary: 'Gestión eficiente de inventarios, transporte, distribución y optimización de rutas.',
+                img: 'https://logistiko.es/wp-content/uploads/2024/04/gestion-logistica.webp',
+                details: {
+                    description: 'Formación en planeación, implementación y control de flujos de bienes y servicios. Incluye manejo de software ERP básico y gestión de riesgos en la cadena.',
+                    duration: '6 meses (Certificación Rápida de Competencias)',
+                    field: 'Coordinador de Almacén, Supervisor de Distribución, Analista de Inventario, Auxiliar de Compras.'
+                }
+            },
+            {
+                id: 'programacion',
+                title: 'Programación Web Full Stack',
+                tag: 'Tecnología',
+                icon: 'fas fa-laptop-code',
+                summary: 'Desarrollo de aplicaciones web completas (front-end y back-end) con tecnologías modernas.',
+                img: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&fit=max&crop=entropy&w=600',
+                details: {
+                    description: 'Inmersión intensiva en lenguajes como JavaScript, Node.js y bases de datos. Énfasis en metodologías ágiles y proyectos reales.',
+                    duration: '10 meses (Carrera Técnica en Desarrollo de Software)',
+                    field: 'Desarrollador Web Junior, Programador de Software, Mantenimiento de Bases de Datos, Freelancer IT.'
+                }
+            },
+            {
+                id: 'electronica',
+                title: 'Electrónica Industrial y Digital',
+                tag: 'Ingeniería',
+                icon: 'fas fa-microchip',
+                summary: 'Diseño, ensamble y reparación de circuitos electrónicos, sistemas de control y microcontroladores.',
+                img: 'https://itsf.mx/site/wp-content/uploads/2017/10/tech-fixes-motherboard-service-center-scaled.jpg',
+                details: {
+                    description: 'Estudio de componentes, electrónica de potencia, robótica básica y automatización de procesos industriales mediante PLC.',
+                    duration: '8 meses (Certificación Técnica Avanzada)',
+                    field: 'Técnico en Automatización, Mantenimiento Electrónico, Técnico de Línea de Producción.'
+                }
+            },
+            {
+                id: 'mecatronica',
+                title: 'Mecatrónica Aplicada',
+                tag: 'Automatización',
+                icon: 'fas fa-robot',
+                summary: 'Integración de mecánica, electrónica e informática para el mantenimiento y diseño de robots industriales.',
+                img: 'https://287524.fs1.hubspotusercontent-na1.net/hubfs/287524/Imported_Blog_Media/habilidades-que-todo-ingeniero-mecatronico-debe-tener-1-compressor-Dec-17-2022-06-53-53-9602-PM.jpg',
+                details: {
+                    description: 'Entrenamiento práctico en el diseño, construcción y operación de sistemas mecatrónicos. Incluye neumática, hidráulica y programación de controladores.',
+                    duration: '12 meses (Doble Certificación en Mecánica y Control)',
+                    field: 'Técnico en Robótica, Operador de CNC, Mantenimiento Predictivo Industrial.'
+                }
+            },
+            {
+                id: 'gastronomia',
+                title: 'Gastronomía y Arte Culinario',
+                tag: 'Emprendimiento',
+                icon: 'fas fa-utensils',
+                summary: 'Técnicas avanzadas de cocina internacional, repostería y gestión para pequeños negocios de alimentos.',
+                img: 'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?q=80&fit=max&crop=entropy&w=600',
+                details: {
+                    description: 'Desarrollo de habilidades culinarias, repostería de vanguardia, y fundamentos de higiene, costos y servicio al cliente.',
+                    duration: '9 meses (Diplomado Culinario)',
+                    field: 'Chef de Partie, Emprendedor de Catering, Repostero Especializado, Consultor de Menús.'
+                }
+            },
+            {
+                id: 'ciberseguridad',
+                title: 'Ciberseguridad y Redes',
+                tag: 'Seguridad IT',
+                icon: 'fas fa-shield-alt',
+                summary: 'Protección de sistemas informáticos y prevención de ataques, enfocado en seguridad de redes y datos.',
+                img: 'https://www.chubb.com/content/dam/chubb-sites/chubb-com/mx-es/mercado-empresarial/articulos/images/cyber-risk-1440x692.jpg',
+                details: {
+                    description: 'Introducción a la detección de vulnerabilidades, pruebas de penetración (ethical hacking) y configuración de firewalls y VPNs.',
+                    duration: '7 meses (Especialización en Seguridad Digital)',
+                    field: 'Analista de Seguridad Junior, Técnico de Redes, Administrador de Sistemas, Consultor de Privacidad.'
+                }
+            },
+            {
+                id: 'automotriz',
+                title: 'Mecánica y Electricidad Automotriz',
+                tag: 'Mecánica',
+                icon: 'fas fa-car-side',
+                summary: 'Diagnóstico, reparación y mantenimiento de motores, transmisiones y sistemas eléctricos de vehículos.',
+                img: 'https://img.freepik.com/foto-gratis/trabajador-servicio-coche-musculoso-reparando-vehiculo_146671-19605.jpg?semt=ais_hybrid&w=740&q=80',
+                details: {
+                    description: 'Mantenimiento preventivo y correctivo, uso de herramientas de diagnóstico electrónico (escáneres) y reparación de sistemas de inyección.',
+                    duration: '12 meses (Certificación Completa para Taller)',
+                    field: 'Mecánico Especializado, Jefe de Taller, Técnico de Servicio Automotriz.'
+                }
+            },
+            {
+                id: 'administracion',
+                title: 'Administración de PYMES',
+                tag: 'Negocios',
+                icon: 'fas fa-chart-line',
+                summary: 'Gestión financiera, recursos humanos, marketing y estrategias para la operación exitosa de pequeñas y medianas empresas.',
+                img: 'https://www.negociosypymes.com/wp-content/uploads/2022/06/gestion-pyme-800x400.jpg',
+                details: {
+                    description: 'Habilidades para la planeación estratégica, optimización de recursos, contabilidad básica y toma de decisiones empresariales enfocadas a la rentabilidad.',
+                    duration: '6 meses (Diplomado Gerencial)',
+                    field: 'Auxiliar Administrativo, Gestor de Proyectos, Encargado de Sucursal, Asistente de Dirección.'
+                }
+            },
+            {
+                id: 'contabilidad',
+                title: 'Contabilidad y Finanzas Básicas',
+                tag: 'Finanzas',
+                icon: 'fas fa-calculator',
+                summary: 'Registro de operaciones, elaboración de estados financieros y cumplimiento de obligaciones fiscales básicas.',
+                img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&fit=max&crop=entropy&w=600',
+                details: {
+                    description: 'Dominio de software contable, análisis de costos, manejo de presupuestos y bases para la presentación de impuestos ante la autoridad fiscal.',
+                    duration: '5 meses (Certificación Rápida)',
+                    field: 'Auxiliar Contable, Capturista de Pólizas, Asistente de Tesorería, Apoyo en Finanzas.'
+                }
+            }
+        ];
+
+        // 2. Función para renderizar las tarjetas
+        function renderCareers() {
+            const container = document.getElementById('carreras-container');
+            container.innerHTML = ''; // Limpiar el contenido existente
+
+            careers.forEach(career => {
+                const cardHtml = `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="taller-card">
+                            <img src="${career.img}" class="taller-img" alt="${career.title}">
+                            <div class="taller-body">
+                                <span class="badge-tech">${career.tag}</span>
+                                <h4 class="mt-2"><i class="${career.icon} me-2 text-secondary"></i>${career.title}</h4>
+                                <p class="small text-muted">${career.summary}</p>
+                                <button type="button" 
+                                        class="btn btn-outline-primary btn-sm w-100 mt-2"
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#carreraDetailModal"
+                                        data-career-id="${career.id}">
+                                    Más Info
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        // 3. Función para manejar el modal
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCareers();
+
+            const detailModal = document.getElementById('carreraDetailModal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalDuration = document.getElementById('modal-duration');
+            const modalCampoLaboral = document.getElementById('modal-campo-laboral');
+            const modalImage = document.getElementById('modal-image');
+            
+            // Evento que se dispara justo antes de que se muestre el modal
+            detailModal.addEventListener('show.bs.modal', function (event) {
+                // Botón que disparó el modal
+                const button = event.relatedTarget;
+                const careerId = button.getAttribute('data-career-id');
+                
+                // Buscar la carrera en los datos
+                const careerData = careers.find(c => c.id === careerId);
+
+                if (careerData) {
+                    // 4. Inyectar los datos en el modal
+                    modalTitle.innerHTML = `<i class="${careerData.icon}"></i> ${careerData.title}`;
+                    modalDescription.textContent = careerData.details.description;
+                    modalDuration.textContent = careerData.details.duration;
+                    modalCampoLaboral.textContent = careerData.details.field;
+                    modalImage.src = careerData.img;
+                    modalImage.alt = careerData.title;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
